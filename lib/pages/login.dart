@@ -16,11 +16,14 @@ class _LoginState extends State<Login> {
       body: SafeArea(
         child: Column(
           children: [
-            Center(
-              child: Image.asset(
-                Constants.loginPageImage,
-                height: MediaQuery.of(context).size.height / 2.3,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  Constants.loginPageImage,
+                  height: MediaQuery.of(context).size.height / 2.3,
+                ),
+              ],
             ),
           ],
         ),
