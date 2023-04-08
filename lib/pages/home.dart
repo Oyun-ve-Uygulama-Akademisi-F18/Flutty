@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutty/services/firebase_service.dart';
+
+import '../services/firebase_service.dart';
 
 class Home extends ConsumerWidget {
   const Home({super.key});
@@ -19,8 +20,8 @@ class Home extends ConsumerWidget {
             data: (data) => Column(
               children: data
                   .map((e) => ListTile(
-                        title: Text(e.subtitle),
-                        subtitle: Text(e.username),
+                        title: Text(e.name),
+                        subtitle: Text(e.surname),
                       ))
                   .toList(),
             ),
