@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutty/pages/duties.dart';
+import 'package:flutty/pages/login.dart';
 
 import 'firebase_options.dart';
 
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       debugShowCheckedModeBanner: false,
-      home: const TableEventsExample(),
+      home: const Login(),
     );
   }
 }
