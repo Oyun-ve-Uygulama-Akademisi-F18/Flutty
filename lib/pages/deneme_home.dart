@@ -133,69 +133,80 @@ class HomePageDutiesCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> duties = [
+      "Proje Yönetimi\nHaftalık Görevler",
+      "Flutter\nHaftalık Görevler",
+      "Unity\nHaftalık Görevler"
+    ];
     return SizedBox(
-        width: MediaQuery.of(context).size.width / 1.2,
-        height: MediaQuery.of(context).size.width / 2.2,
-        child: Card(
-          color: Constants.mainColor,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-          child: Stack(
-            children: [
-              Expanded(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(30),
-                  child: Image.asset(
-                    Constants.whiteDotsCard,
-                    opacity: const AlwaysStoppedAnimation(0.6),
+      height: 200.0,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 3,
+        itemBuilder: (BuildContext context, int index) {
+          return Card(
+            color: Constants.mainColor,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+            child: Stack(
+              children: [
+                Expanded(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: Image.asset(
+                      Constants.whiteDotsCard,
+                      opacity: const AlwaysStoppedAnimation(0.6),
+                    ),
                   ),
                 ),
-              ),
-              const Positioned(
-                left: 10,
-                top: 60,
-                child: Text(
-                  "Proje Yönetimi\nHaftalık Görevler",
-                  style: TextStyle(
-                      fontSize: 23,
-                      fontWeight: FontWeight.w600,
-                      color: Constants.whiteColor),
-                ),
-              ),
-              const Positioned(
-                left: 10,
-                bottom: 20,
-                child: Text(
-                  "4 of 5 Completed",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Constants.whiteColor),
-                ),
-              ),
-              Positioned(
-                right: 10,
-                top: 20,
-                child: CircularPercentIndicator(
-                  animation: true,
-                  animationDuration: 1500,
-                  radius: 60.0,
-                  lineWidth: 15.0,
-                  percent: 0.5,
-                  backgroundColor: Color.fromARGB(255, 184, 225, 185),
-                  progressColor: Colors.white,
-                  center: const Text(
-                    "50%",
+                const Positioned(
+                  left: 10,
+                  top: 60,
+                  child: Text(
+                    "Proje Yönetimi\nHaftalık Görevler",
                     style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
+                        fontSize: 23,
+                        fontWeight: FontWeight.w600,
+                        color: Constants.whiteColor),
                   ),
-                  circularStrokeCap: CircularStrokeCap.round,
                 ),
-              )
-            ],
-          ),
-        ));
+                const Positioned(
+                  left: 10,
+                  bottom: 20,
+                  child: Text(
+                    "4 of 5 Completed",
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Constants.whiteColor),
+                  ),
+                ),
+                Positioned(
+                  right: 10,
+                  top: 20,
+                  child: CircularPercentIndicator(
+                    animation: true,
+                    animationDuration: 1500,
+                    radius: 60.0,
+                    lineWidth: 15.0,
+                    percent: 0.5,
+                    backgroundColor: const Color.fromARGB(255, 184, 225, 185),
+                    progressColor: Colors.white,
+                    center: const Text(
+                      "50%",
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    circularStrokeCap: CircularStrokeCap.round,
+                  ),
+                )
+              ],
+            ),
+          );
+        },
+      ),
+    );
   }
 }
