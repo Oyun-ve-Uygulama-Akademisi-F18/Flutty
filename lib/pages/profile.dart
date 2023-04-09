@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutty/constants/constants.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -19,7 +20,7 @@ class _ProfilePageState extends State<ProfilePage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile Page'),
+        title: Text(Constants.profileAppbartext),
         bottom: TabBar(
           controller: _tabController,
           tabs: [
@@ -32,36 +33,36 @@ class _ProfilePageState extends State<ProfilePage>
       body: ListView(
         children: [
           Container(
-            height: 200.0,
-            color: Colors.grey[300],
+            height: Constants.profileContainerheight,
+            color: Constants.specialGrey,
             child: Center(
               child: CircleAvatar(
                 radius: 60.0,
-                backgroundImage: NetworkImage('https://i.pravatar.cc/300'),
+                backgroundImage: NetworkImage(Constants.profileImage),
               ),
             ),
           ),
-          SizedBox(height: 20.0),
+         Constants.sizedBoxHeight20,
           Center(
             child: Text(
               'John Doe',
               style: TextStyle(
-                fontSize: 24.0,
+                fontSize: Constants.profilefontSizemax,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          SizedBox(height: 10.0),
+          Constants.sizedBoxHeight10,
           Center(
             child: Text(
               'Flutter Developer',
               style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.grey,
+                fontSize: Constants.profilefontSize,
+                color: Constants.grey,
               ),
             ),
           ),
-          SizedBox(height: 20.0),
+          Constants.sizedBoxHeight20,
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
@@ -75,12 +76,12 @@ class _ProfilePageState extends State<ProfilePage>
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 5.0),
+                    Constants.sizedBoxHeight5,
                     Text(
                       '10',
                       style: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.grey,
+                        fontSize: Constants.profilefontSize,
+                        color:Constants.grey,
                       ),
                     ),
                   ],
@@ -90,15 +91,15 @@ class _ProfilePageState extends State<ProfilePage>
                     Text(
                       'Friends',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: Constants.profileFontweight,
                       ),
                     ),
-                    SizedBox(height: 5.0),
+                    Constants.sizedBoxHeight5,
                     Text(
                       '50',
                       style: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.grey,
+                        fontSize: Constants.profilefontSize,
+                        color: Constants.grey,
                       ),
                     ),
                   ],
@@ -111,12 +112,12 @@ class _ProfilePageState extends State<ProfilePage>
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 5.0),
+                    Constants.sizedBoxHeight5,
                     Text(
                       '100',
                       style: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.grey,
+                        fontSize: Constants.profilefontSize,
+                        color: Constants.grey,
                       ),
                     ),
                   ],
@@ -134,7 +135,7 @@ class StarTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('Star Tab'),
+      child: Text(Constants.profileStartext),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutty/constants/constants.dart';
 
 class activity extends StatefulWidget {
   const activity({super.key});
@@ -13,17 +14,17 @@ class _activityState extends State<activity> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: Center(child: Text('Aktiviteler')),
+        title: Center(child: Text(Constants.profileAppbartext)),
         titleTextStyle:
             TextStyle(color: Colors.black87, fontWeight: FontWeight.w900),
-        backgroundColor: Colors.white,
+        backgroundColor: Constants.whiteColor,
       ),
       body: Column(
         children: [
           Container(
-            color: Colors.white70,
-            padding: const EdgeInsets.all(15.0),
-            margin: const EdgeInsets.all(0),
+            color: Constants.whiteColor,
+            padding: const EdgeInsets.all(Constants.paddingActivity),
+            margin: const EdgeInsets.all(Constants.marginActivityappbar),
             
             height: 60,
             
@@ -35,10 +36,10 @@ class _activityState extends State<activity> {
                   width: 25,
                 ),
                 Text(
-                  'Bugün',
+                  Constants.activityTexttoday,
                   style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 25,
+                    color: Constants.blackColor,
+                    fontSize: Constants.activityfontSizetittle,
                   ),
                 ),
                 SizedBox(
@@ -48,9 +49,9 @@ class _activityState extends State<activity> {
             ),
           ),
           Container(
-            color: Colors.white,
-            padding: const EdgeInsets.all(15.0),
-            margin: const EdgeInsets.all(15.0),
+            color: Constants.whiteColor,
+            padding: const EdgeInsets.all(Constants.paddingActivity),
+            margin: const EdgeInsets.all(Constants.marginActivity),
             height: 50,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -58,10 +59,10 @@ class _activityState extends State<activity> {
               Icon(Icons.adjust_outlined,size: 25,),
               SizedBox(width: 27,),
                 Text(
-                  'Kahvaltı',
+                  Constants.activityTextbreakfast,
                   style: TextStyle(
-                      color: Colors.black87,
-                      fontSize: 20,
+                      color: Constants.darkColor,
+                      fontSize: Constants.activityfontSize,
                       fontWeight: FontWeight.bold),
                 ),
                 
@@ -70,10 +71,10 @@ class _activityState extends State<activity> {
                   width: 150,
                 ),
                 Text(
-                  '06.30',
+                 Constants.activityClock,
                   style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 20,
+                    color: Constants.darkColor,
+                    fontSize: Constants.activityfontSize,
                   ),
                 ),
                 
@@ -81,9 +82,9 @@ class _activityState extends State<activity> {
             ),
           ),
           Container(
-            color: Colors.white,
-            padding: const EdgeInsets.all(15.0),
-            margin: const EdgeInsets.all(15.0),
+            color: Constants.whiteColor,
+            padding: const EdgeInsets.all(Constants.paddingActivity),
+            margin: const EdgeInsets.all(Constants.marginActivity),
             height: 50,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -91,10 +92,10 @@ class _activityState extends State<activity> {
                  Icon(Icons.adjust_outlined,size: 25,),
                  SizedBox(width: 25),
                 Text(
-                  'Koşu',
+                 Constants.activityTextwalk,
                   style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 20,
+                    color: Constants.darkColor,
+                    fontSize: Constants.activityfontSize,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -102,19 +103,19 @@ class _activityState extends State<activity> {
                   width: 180,
                 ),
                 Text(
-                  '07.30',
+                  Constants.activityClockmorning,
                   style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 20,
+                    color: Constants.darkColor,
+                    fontSize: Constants.activityfontSize,
                   ),
                 )
               ],
             ),
           ),
           Container(
-            color: Colors.white,
-            padding: const EdgeInsets.all(15.0),
-            margin: const EdgeInsets.all(15.0),
+            color: Constants.whiteColor,
+            padding: const EdgeInsets.all(Constants.paddingActivity),
+            margin: const EdgeInsets.all(Constants.marginActivity),
             height: 50,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -122,29 +123,29 @@ class _activityState extends State<activity> {
                  Icon(Icons.adjust_outlined,size: 25,),
                  SizedBox(width: 25,),
                 Text(
-                  'Antrenman',
+                  Constants.activityTexttraining,
                   style: TextStyle(
-                      color: Colors.black87,
-                      fontSize: 20,
+                      color: Constants.darkColor,
+                      fontSize: Constants.activityfontSize,
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   width: 124,
                 ),
                 Text(
-                  '10.30',
+                 Constants.activityClocknoon,
                   style: TextStyle(
                     color: Colors.black87,
-                    fontSize: 20,
+                    fontSize: Constants.activityfontSize,
                   ),
                 )
               ],
             ),
           ),
           Container(
-            color: Colors.white,
-            padding: const EdgeInsets.all(15.0),
-            margin: const EdgeInsets.all(10),
+            color: Constants.whiteColor,
+            padding: const EdgeInsets.all(Constants.paddingActivity),
+            margin: const EdgeInsets.all(Constants.marginActivitymid),
             height: 55,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -154,10 +155,10 @@ class _activityState extends State<activity> {
                   width: 25,
                 ),
                 Text(
-                  'Yarın',
+                  Constants.activityTexttomorrow,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 25,
+                    fontSize:Constants.activityfontSizetittle,
                   ),
                 ),
                 SizedBox(
@@ -167,9 +168,9 @@ class _activityState extends State<activity> {
             ),
           ),
           Container(
-            color: Colors.white,
-            padding: const EdgeInsets.all(15.0),
-            margin: const EdgeInsets.all(15.0),
+            color: Constants.whiteColor,
+            padding: const EdgeInsets.all(Constants.paddingActivity),
+            margin: const EdgeInsets.all(Constants.marginActivity),
             height: 50,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -177,29 +178,29 @@ class _activityState extends State<activity> {
                 Icon(Icons.adjust_outlined,size: 25,),
                  SizedBox(width: 25),
                 Text(
-                  'Koşu',
+                 Constants.activityTextwalk,
                   style: TextStyle(
-                      color: Colors.black87,
-                      fontSize: 20,
+                      color: Constants.darkColor,
+                      fontSize: Constants.activityfontSize,
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   width: 180,
                 ),
                 Text(
-                  '07.30',
+                  Constants.activityClockmorning,
                   style: TextStyle(
                     color: Colors.black87,
-                    fontSize: 20,
+                    fontSize: Constants.activityfontSize,
                   ),
                 )
               ],
             ),
           ),
           Container(
-            color: Colors.white,
-            padding: const EdgeInsets.all(15.0),
-            margin: const EdgeInsets.all(15.0),
+            color: Constants.whiteColor,
+            padding: const EdgeInsets.all(Constants.paddingActivity),
+            margin: const EdgeInsets.all(Constants.marginActivity),
             height: 50,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -207,10 +208,10 @@ class _activityState extends State<activity> {
                  Icon(Icons.adjust_outlined,size: 25),
                  SizedBox(width: 25),
                 Text(
-                  'Antrenman',
+                 Constants.activityTexttraining,
                   style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 20,
+                    color: Constants.darkColor,
+                    fontSize: Constants.activityfontSize,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -218,19 +219,19 @@ class _activityState extends State<activity> {
                   width: 124,
                 ),
                 Text(
-                  '09.30',
+                 Constants.activityClockmidday,
                   style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 20,
+                    color: Constants.darkColor,
+                    fontSize: Constants.activityfontSize,
                   ),
                 )
               ],
             ),
           ),
           Container(
-            color: Colors.white,
-            padding: const EdgeInsets.all(15.0),
-            margin: const EdgeInsets.all(15.0),
+            color: Constants.whiteColor,
+            padding: const EdgeInsets.all(Constants.paddingActivity),
+            margin: const EdgeInsets.all(Constants.marginActivity),
             height: 50,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -238,10 +239,10 @@ class _activityState extends State<activity> {
                  Icon(Icons.adjust_outlined,size: 25),
                  SizedBox(width: 25),
                 Text(
-                  'Yüzme',
+                  Constants.activityTextswimming,
                   style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 20,
+                    color: Constants.darkColor,
+                    fontSize: Constants.activityfontSize,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -249,10 +250,10 @@ class _activityState extends State<activity> {
                   width: 160,
                 ),
                 Text(
-                  '11.30',
+                 Constants.activityClockafternoon,
                   style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 20,
+                    color: Constants.darkColor,
+                    fontSize: Constants.activityfontSize,
                   ),
                 )
               ],

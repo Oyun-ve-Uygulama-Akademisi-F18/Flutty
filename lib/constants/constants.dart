@@ -34,6 +34,7 @@ class Constants {
   static const double paddingActivity = 15.0;
   static const double marginActivity = 15.0;
   static const double marginActivityappbar =0;
+  static const double marginActivitymid = 10.0;
   /*-------Activity Font Size-------*/
   static const double activityfontSizetittle=25; 
   static const double activityfontSize=20; 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-
 import '../constants/constants.dart';
 import '../services/firebase_service.dart';
 import '../widgets/sign_form_textfield.dart';
@@ -36,7 +35,7 @@ class _LoginState extends State<Login> {
                 ],
               ),
               Text(
-                'Hoşgeldin',
+                Constants.loginWelcome,
                 style: Theme.of(context)
                     .textTheme
                     .headlineMedium
@@ -44,7 +43,7 @@ class _LoginState extends State<Login> {
               ),
               const SizedBox(height: 10),
               Text(
-                'Oyun ve Uygulama Akademisinin Motivasyon \n Uygulamasında Seni Görmekten Mutluluk Duyuyoruz \n Hadi Hemen Giriş Yap ',
+                Constants.loginlogin,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: Constants.greyColor,
                     ),
@@ -66,15 +65,15 @@ class _LoginState extends State<Login> {
                         textInputType: TextInputType.text,
                         validator: RequiredValidator(
                             errorText:
-                                "Lütfen Geçerli Bir Kullanıcı Adı Girin"),
-                        hintText: "Kullanıcı Adı",
+                                Constants.loginErroxtext),
+                        hintText: Constants.loginUsertext,
                       ),
                       SignFormTextField(
                         icon: const Icon(
                           Icons.lock_outline_rounded,
                           color: Constants.mainColor,
                         ),
-                        hintText: 'Şifre',
+                        hintText: Constants.loginPasswordtext,
                         name: _password,
                         enableSuggestions: false,
                         isPassword: true,
@@ -82,18 +81,18 @@ class _LoginState extends State<Login> {
                         validator: MultiValidator([
                           MaxLengthValidator(10,
                               errorText:
-                                  'Şifreniz En Fazla 10 Karekterden Olmalıdır'),
+                                  Constants.loginUsercharackter),
                           RequiredValidator(
-                              errorText: 'Şifre girmeniz gerekli'),
+                              errorText: Constants.loginUserenterpassword),
                           MinLengthValidator(5,
-                              errorText: 'Şifreniz En Az 5 Karakter Olmalıdır'),
+                              errorText: Constants.loginUsercharacktermin),
                         ]),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           MaterialButton(
-                            child: const Text('Şifremi Bilmiyorum'),
+                            child: const Text(Constants.loginPasswordtextnot),
                             onPressed: () {},
                           )
                         ],
@@ -131,7 +130,7 @@ class _LoginState extends State<Login> {
   Center _connectUsingText(BuildContext context) {
     return Center(
         child: Text(
-      'Veya kullanarak bağlanın',
+     Constants.loginUserother,
       style: Theme.of(context)
           .textTheme
           .bodyLarge
@@ -170,7 +169,7 @@ class LoginButton extends ConsumerWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(40))),
         child: const Text(
-          'Giriş Yap',
+          Constants.loginUser,
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         onPressed: () {
@@ -185,15 +184,15 @@ class LoginButton extends ConsumerWidget {
                 context: context,
                 builder: (BuildContext context) {
                   return AlertDialog(
-                    title: const Text("Uyarı"),
-                    content: const Text("Kullanıcı Adı veya Şifre Hatalıdır"),
+                    title: const Text(Constants.loginAlert),
+                    content: const Text(Constants.loginUserincorrect),
                     actions: <Widget>[
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Constants.mainColor,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10))),
-                        child: const Text("Tamam"),
+                        child: const Text(Constants.loginUserokey),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
