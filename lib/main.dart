@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutty/pages/activity.dart';
-
-
+import 'package:flutty/pages/duties.dart';
+import 'package:flutty/pages/home.dart';
+import 'package:flutty/pages/login.dart';
+import 'package:flutty/pages/profile.dart';
 import 'firebase_options.dart';
 import 'pages/deneme_home.dart';
 
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       debugShowCheckedModeBanner: false,
-      home: const ActivityDemo(),
+      home:  ActivityDemo(),
     );
   }
 }

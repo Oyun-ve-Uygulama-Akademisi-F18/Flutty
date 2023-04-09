@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutty/widgets/activitycontainer.dart';
-
 import '../constants/constants.dart';
 
 class ActivityDemo extends StatefulWidget {

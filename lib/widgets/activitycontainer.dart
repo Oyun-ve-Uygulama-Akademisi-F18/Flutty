@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../constants/constants.dart';
 
 class ActivityContainer extends StatelessWidget {
@@ -23,13 +22,13 @@ final String clock;
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(Icons.adjust_outlined,size: 20),
+                  Icon(Icons.adjust_outlined,size: 20,color: Constants.mainColor,),
                   SizedBox(width: 20),
                   Text(text,style: TextStyle(color: Constants.darkColor,
                       fontSize: Constants.activityfontSize,
                       fontWeight: FontWeight.bold),),
-                  Expanded(child: Container()),
-                  Text(clock,style: TextStyle(color: Constants.darkColor,
+                     Expanded(child: Container()),
+                      Text(clock,style: TextStyle(color: Constants.darkColor,
                     fontSize: Constants.activityfontSize,),)
                 ],
               ),
@@ -45,7 +44,7 @@ final String clock;
           boxShadow: [
             BoxShadow(
               color: Constants.greyColor,
-              blurRadius: 4,
+              blurRadius:4,
               offset: Offset(4, 8), // Shadow position
             ),
           ],
