@@ -40,6 +40,8 @@ dependencies:
   cloud_firestore: ^4.5.0
   flutter_riverpod: ^2.3.4
   freezed_annotation: ^2.2.0
+  intl: ^0.18.0
+  percent_indicator: ^4.2.3
 
 dev_dependencies:
   flutter_test:

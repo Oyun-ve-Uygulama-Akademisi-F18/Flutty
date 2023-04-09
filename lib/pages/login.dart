@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
 import '../constants/constants.dart';
+import '../services/firebase_service.dart';
 import '../widgets/sign_form_textfield.dart';
 import '../widgets/social_elevated_button.dart';
-import 'home.dart';
+import 'deneme_home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -29,7 +31,7 @@ class _LoginState extends State<Login> {
                 children: [
                   Image.asset(
                     Constants.loginPageImage,
-                    height: MediaQuery.of(context).size.height / 3.5,
+                    height: MediaQuery.of(context).size.height / 4,
                   ),
                 ],
               ),
@@ -138,7 +140,7 @@ class _LoginState extends State<Login> {
   }
 }
 
-class LoginButton extends StatelessWidget {
+class LoginButton extends ConsumerWidget {
   LoginButton({
     Key? key,
     required GlobalKey<FormState> formkey,
@@ -154,7 +156,11 @@ class LoginButton extends StatelessWidget {
   final TextEditingController _password;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    var data;
+    final users = ref.read(userProvider).value;
+    //data = users?.map((e) => UserModel.fromJson(e as Map<String, dynamic?>));
+
     return SizedBox(
       width: MediaQuery.of(context).size.width / 2,
       child: ElevatedButton(
@@ -171,9 +177,9 @@ class LoginButton extends StatelessWidget {
           if (_formkey.currentState!.validate() == true) {
             _formkey.currentState?.save();
 
-            if (_username.text == "OUA2023" && _password.text == "20235") {
-              Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: ((context) => const Home())));
+            if (_username.text == "Makgul" && _password.text == "20235") {
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: ((context) => const DenemeHome())));
             } else {
               showDialog(
                 context: context,

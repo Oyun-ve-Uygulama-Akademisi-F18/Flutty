@@ -16,12 +16,25 @@ class Home extends ConsumerWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          ElevatedButton(
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return SizedBox(
+                    height: 400,
+                  );
+                },
+              );
+            },
+            child: Text('data'),
+          ),
           users.when(
             data: (data) => Column(
               children: data
                   .map((e) => ListTile(
                         title: Text(e.name),
-                        subtitle: Text(e.surname),
+                        subtitle: Text(e.username),
                       ))
                   .toList(),
             ),
