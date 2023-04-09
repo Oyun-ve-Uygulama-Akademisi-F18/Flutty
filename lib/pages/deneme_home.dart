@@ -32,49 +32,7 @@ class _DenemeHomeState extends State<DenemeHome> {
             ),
           ),
           const SizedBox(height: 30),
-          Padding(
-            padding: const EdgeInsets.all(25.0),
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height / 2.3,
-              decoration: const BoxDecoration(
-                color: Constants.mainColor,
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.elliptical(300, 300),
-                  topLeft: Radius.circular(20),
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'MO\nTİVAS\nYON',
-                      style: TextStyle(
-                          fontSize: 60,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Text(
-                      'Odasına Katılmak için hemen tıkla.',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
+          MotivationRoom(),
         ],
       ),
     );
@@ -122,6 +80,82 @@ class _DenemeHomeState extends State<DenemeHome> {
           ),
         )
       ],
+    );
+  }
+}
+
+class MotivationRoom extends StatelessWidget {
+  const MotivationRoom({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(25.0),
+      child: GestureDetector(
+        onTap: () {
+          showModalBottomSheet(
+            context: context,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(60.0),
+              ),
+            ),
+            builder: (context) {
+              return SizedBox(
+                height: 400,
+                child: Column(children: [
+                  ListTile(
+                    title: Text("data"),
+                    subtitle: Text('data'),
+                  )
+                ]),
+              );
+            },
+          );
+        },
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height / 2.8,
+          decoration: const BoxDecoration(
+            color: Constants.mainColor,
+            borderRadius: BorderRadius.only(
+              topRight: Radius.elliptical(300, 300),
+              topLeft: Radius.circular(20),
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(20),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'MO\nTİVAS\nYON',
+                  style: TextStyle(
+                      fontSize: 60,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  'Odasına Katılmak için hemen tıkla.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
