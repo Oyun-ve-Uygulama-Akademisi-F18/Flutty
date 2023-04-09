@@ -21,14 +21,17 @@ class Constants {
   static const String activityTexttoday = 'Bugün';
   static const String activityTextbreakfast = 'Kahvaltı';
   static const String activityClock = '06.30';
-  static const String activityTextwalk = 'Koşu';
+  static const String activityTextbook = 'Kitap Okuma';
   static const String activityClockmorning = '07.30';
-  static const String activityTexttraining = 'Antrenman';
+  static const String activityTexttslack = 'Slack Grubuna Göz Atma';
   static const String activityClocknoon = '10.30';
-  static const String activityTexttomorrow = 'Yarın';
-  static const String activityClockmidday = '09.30';
-  static const String activityTextswimming = 'Yüzme';
+  static const String activityTextflutter = 'Flutter Çalışması';
   static const String activityClockafternoon = '11.30';
+  static const String activityTextwork = 'Coursera Videolarını İzleme';
+  static const String activityClockafter= '15.30';
+  static const String activityTextlive = 'Canlı Yayınlara Katılım';
+  static const String activityClocknightr= '15.30';
+  
 
 /*-------------Activity Margin Const-----------*/
   static const double paddingActivity = 15.0;

@@ -2,6 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutty/pages/activity.dart';
+
 
 import 'firebase_options.dart';
 import 'pages/deneme_home.dart';
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       debugShowCheckedModeBanner: false,
-      home: const DenemeHome(),
+      home: const ActivityDemo(),
     );
   }
 }
