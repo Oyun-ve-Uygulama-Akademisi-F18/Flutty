@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutty/widgets/activitycontainer.dart';
 import '../constants/constants.dart';
-import '../widgets/activitycontainer.dart';
 
-class Activity extends StatefulWidget {
-  const Activity({super.key});
-
+class ActivityDemo extends StatefulWidget {
+  const ActivityDemo({super.key});
   @override
-  State<Activity> createState() => _ActivityState();
+  State<ActivityDemo> createState() => _ActivityDemoState();
 }
 
-class _ActivityState extends State<Activity> {
+class _ActivityDemoState extends State<ActivityDemo> {
   @override
   Widget build(BuildContext context) {
     var activityTextFlutter;
