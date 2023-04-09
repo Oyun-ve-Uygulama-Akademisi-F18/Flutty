@@ -85,4 +85,15 @@ class Constants {
   static const SizedBox sizedBoxHeight10 = SizedBox(height: 10);
   static const SizedBox sizedBoxHeight15 = SizedBox(height: 15);
   static const SizedBox sizedBoxHeight20 = SizedBox(height: 20);
+  static const SizedBox sizedBoxHeight40 = SizedBox(height: 40);
+
+/*---------- Padding -------*/
+  static const EdgeInsets paddingRightLeft25 =
+      EdgeInsets.only(right: 25, left: 25);
+  static const EdgeInsets paddingRightLeft10 =
+      EdgeInsets.only(right: 10, left: 10);
+  static const EdgeInsets paddingRightLeft20 =
+      EdgeInsets.only(right: 20, left: 20);
+  static const EdgeInsets paddingRightLeftTop10 =
+      EdgeInsets.only(right: 10, left: 10, top: 10);
 }

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../utils.dart';
+import '../../utils.dart';
 
-class TableEventsExample extends StatefulWidget {
-  const TableEventsExample({super.key});
+class Duties extends StatefulWidget {
+  const Duties({super.key});
 
   @override
-  TableEventsExampleState createState() => TableEventsExampleState();
+  DutiesState createState() => DutiesState();
 }
 
-class TableEventsExampleState extends State<TableEventsExample> {
+class DutiesState extends State<Duties> {
   bool _isChecked = false;
   late final ValueNotifier<List<Event>> _selectedEvents;
   CalendarFormat _calendarFormat = CalendarFormat.month;

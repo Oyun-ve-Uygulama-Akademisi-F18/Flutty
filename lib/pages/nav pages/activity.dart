@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../constants/constants.dart';
-import '../widgets/activitycontainer.dart';
+import '../../constants/constants.dart';
+import '../../widgets/activitycontainer.dart';
 
 class Activity extends StatefulWidget {
   const Activity({super.key});

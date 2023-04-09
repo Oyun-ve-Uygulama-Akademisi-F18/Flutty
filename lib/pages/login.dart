@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
 import '../constants/constants.dart';
+import '../widgets/nav_bar.dart';
 import '../widgets/sign_form_textfield.dart';
 import '../widgets/social_elevated_button.dart';
-import 'home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -288,7 +288,7 @@ class LoginButton extends StatelessWidget {
           .then((value) {
         log("Giriş başarılı");
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: ((context) => const Home())));
+            MaterialPageRoute(builder: ((context) => const NavBar())));
       });
     } catch (e) {
       showDialog(

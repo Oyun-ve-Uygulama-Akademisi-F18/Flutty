@@ -1,15 +1,16 @@
-// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
-import 'package:flutty/constants/constants.dart';
 
-class ProfilePage extends StatefulWidget {
+import '../../constants/constants.dart';
+
+class Profile extends StatefulWidget {
+  const Profile({super.key});
+
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  // ignore: library_private_types_in_public_api
+  _ProfileState createState() => _ProfileState();
 }
 
-class _ProfilePageState extends State<ProfilePage>
-    with SingleTickerProviderStateMixin {
+class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -134,6 +135,8 @@ class _ProfilePageState extends State<ProfilePage>
 }
 
 class StarTab extends StatelessWidget {
+  const StarTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const Center(
