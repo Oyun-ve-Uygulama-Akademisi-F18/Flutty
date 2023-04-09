@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:flutty/constants/constants.dart';
 
@@ -20,10 +22,10 @@ class _ProfilePageState extends State<ProfilePage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Constants.profileAppbartext),
+        title: const Text(Constants.profileAppbartext),
         bottom: TabBar(
           controller: _tabController,
-          tabs: [
+          tabs: const [
             Tab(icon: Icon(Icons.star)),
             Tab(icon: Icon(Icons.people)),
             Tab(icon: Icon(Icons.score)),
@@ -35,15 +37,15 @@ class _ProfilePageState extends State<ProfilePage>
           Container(
             height: Constants.profileContainerheight,
             color: Constants.specialGrey,
-            child: Center(
+            child: const Center(
               child: CircleAvatar(
                 radius: 60.0,
                 backgroundImage: NetworkImage(Constants.profileImage),
               ),
             ),
           ),
-         Constants.sizedBoxHeight20,
-          Center(
+          Constants.sizedBoxHeight20,
+          const Center(
             child: Text(
               'John Doe',
               style: TextStyle(
@@ -53,7 +55,7 @@ class _ProfilePageState extends State<ProfilePage>
             ),
           ),
           Constants.sizedBoxHeight10,
-          Center(
+          const Center(
             child: Text(
               'Flutter Developer',
               style: TextStyle(
@@ -64,7 +66,7 @@ class _ProfilePageState extends State<ProfilePage>
           ),
           Constants.sizedBoxHeight20,
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 20.0),
+            margin: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -81,13 +83,13 @@ class _ProfilePageState extends State<ProfilePage>
                       '10',
                       style: TextStyle(
                         fontSize: Constants.profilefontSize,
-                        color:Constants.grey,
+                        color: Constants.grey,
                       ),
                     ),
                   ],
                 ),
                 Column(
-                  children: [
+                  children: const [
                     Text(
                       'Friends',
                       style: TextStyle(
@@ -105,7 +107,7 @@ class _ProfilePageState extends State<ProfilePage>
                   ],
                 ),
                 Column(
-                  children: [
+                  children: const [
                     Text(
                       'Scores',
                       style: TextStyle(

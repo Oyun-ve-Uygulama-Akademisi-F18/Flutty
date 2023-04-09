@@ -1,7 +1,9 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
-import 'package:flutty/pages/login.dart';
 
 import '../constants/constants.dart';
+import 'login.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -38,30 +40,30 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           Expanded(
             child: PageView.builder(
-                itemCount: onboardData.length,
+                itemCount: splashData.length,
                 controller: _pageController,
-                itemBuilder: (context, index) => OnboardContent(
-                    image: onboardData[index].image,
-                    title: onboardData[index].title,
-                    description: onboardData[index].description)),
+                itemBuilder: (context, index) => splashContent(
+                    image: splashData[index].image,
+                    title: splashData[index].title,
+                    description: splashData[index].description)),
           ),
           Padding(
             padding: const EdgeInsets.all(45.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('${currentpage + 1}/' + onboardData.length.toString()),
+                Text('${currentpage + 1}/${splashData.length}'),
                 MaterialButton(
                   onPressed: () {
                     _pageController.nextPage(
                         duration: const Duration(milliseconds: 700),
                         curve: Curves.ease);
                     if (currentpage == 2) {
-                      Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: ((context) => Login())));
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: ((context) => const Login())));
                     }
                   },
-                  child: Text('Next'),
+                  child: const Text('Devam'),
                 ),
               ],
             ),
@@ -72,36 +74,36 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 }
 
-class Onboard {
+class splash {
   final String image, title, description;
 
-  Onboard({
+  splash({
     required this.image,
     required this.title,
     required this.description,
   });
 }
 
-final List<Onboard> onboardData = [
-  Onboard(
-    image: Constants.loginPageImage,
-    title: Constants.loginWelcome,
-    description: Constants.loginWelcome,
+final List<splash> splashData = [
+  splash(
+    image: Constants.splashScreen1,
+    title: Constants.splashScreen1Title1,
+    description: Constants.splashScreen1SubTitle1,
   ),
-  Onboard(
-    image: Constants.loginPageImage,
-    title: Constants.loginWelcome,
-    description: Constants.loginWelcome,
+  splash(
+    image: Constants.splashScreen2,
+    title: Constants.splashScreen1Title2,
+    description: Constants.splashScreen1SubTitle2,
   ),
-  Onboard(
-    image: Constants.loginPageImage,
-    title: Constants.loginWelcome,
-    description: Constants.loginWelcome,
+  splash(
+    image: Constants.splashScreen3,
+    title: Constants.splashScreen1Title3,
+    description: Constants.splashScreen1SubTitle3,
   )
 ];
 
-class OnboardContent extends StatelessWidget {
-  const OnboardContent({
+class splashContent extends StatelessWidget {
+  const splashContent({
     Key? key,
     required this.image,
     required this.title,
@@ -123,9 +125,10 @@ class OnboardContent extends StatelessWidget {
               style: const ButtonStyle(),
               onPressed: () {
                 Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: ((context) => Login())));
+                    MaterialPageRoute(builder: ((context) => const Login())));
               },
-              child: Text('Skip'),
+              child: const Text('Geç',
+                  style: TextStyle(color: Constants.mainColor)),
             ),
           ]),
         ),
@@ -138,7 +141,7 @@ class OnboardContent extends StatelessWidget {
             textAlign: TextAlign.center,
             style: Theme.of(context)
                 .textTheme
-                .headline4
+                .headlineMedium
                 ?.copyWith(color: Colors.black)),
         const SizedBox(height: 13),
         Padding(

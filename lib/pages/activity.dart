@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutty/widgets/activitycontainer.dart';
 import '../constants/constants.dart';
+import '../widgets/activitycontainer.dart';
 
 class Activity extends StatefulWidget {
   const Activity({super.key});
+
   @override
   State<Activity> createState() => _ActivityState();
 }
@@ -11,7 +12,6 @@ class Activity extends StatefulWidget {
 class _ActivityState extends State<Activity> {
   @override
   Widget build(BuildContext context) {
-    var activityTextFlutter;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Constants.mainColor,

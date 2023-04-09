@@ -29,17 +29,17 @@ class SignFormTextField extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 15),
         child: TextFormField(
-            style: TextStyle(color: Constants.mainColor),
+            style: const TextStyle(color: Constants.mainColor),
             validator: validator,
             controller: _name,
             keyboardType: textInputType,
             obscureText: isPassword,
             enableSuggestions: enableSuggestions,
             decoration: InputDecoration(
-              contentPadding: EdgeInsets.all(20),
+              contentPadding: const EdgeInsets.all(20),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(40),
-                borderSide: BorderSide(color: Constants.mainColor),
+                borderSide: const BorderSide(color: Constants.mainColor),
               ),
               prefixIcon: icon,
               isDense: true,

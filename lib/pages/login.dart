@@ -1,11 +1,13 @@
+import 'dart:developer';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+
 import '../constants/constants.dart';
-import '../services/firebase_service.dart';
 import '../widgets/sign_form_textfield.dart';
 import '../widgets/social_elevated_button.dart';
-import 'deneme_home.dart';
+import 'home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -64,8 +66,7 @@ class _LoginState extends State<Login> {
                         isPassword: false,
                         textInputType: TextInputType.text,
                         validator: RequiredValidator(
-                            errorText:
-                                Constants.loginErroxtext),
+                            errorText: Constants.loginErroxtext),
                         hintText: Constants.loginUsertext,
                       ),
                       SignFormTextField(
@@ -80,11 +81,10 @@ class _LoginState extends State<Login> {
                         textInputType: TextInputType.number,
                         validator: MultiValidator([
                           MaxLengthValidator(10,
-                              errorText:
-                                  Constants.loginUsercharackter),
+                              errorText: Constants.loginUsercharackter),
                           RequiredValidator(
                               errorText: Constants.loginUserenterpassword),
-                          MinLengthValidator(5,
+                          MinLengthValidator(4,
                               errorText: Constants.loginUsercharacktermin),
                         ]),
                       ),
@@ -93,7 +93,42 @@ class _LoginState extends State<Login> {
                         children: [
                           MaterialButton(
                             child: const Text(Constants.loginPasswordtextnot),
-                            onPressed: () {},
+                            onPressed: () {
+                              if (_username.text.isNotEmpty &&
+                                  _password.text.isNotEmpty) {
+                                firebaseCreate(
+                                    email: _username.text,
+                                    password: _password.text,
+                                    context: context);
+                              } else {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: const Text(Constants.loginAlert),
+                                      content: const Text(
+                                          "Lüütfen Email ve Password Giriniz"),
+                                      actions: <Widget>[
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              backgroundColor:
+                                                  Constants.mainColor,
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10))),
+                                          child: const Text(
+                                              Constants.loginUserokey),
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              }
+                            },
                           )
                         ],
                       ),
@@ -106,8 +141,8 @@ class _LoginState extends State<Login> {
                       const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          const ElevatedButtonSocial(
+                        children: const [
+                          ElevatedButtonSocial(
                               color: Colors.white,
                               imagePath: Constants.socialMediaIconSlack),
                           ElevatedButtonSocial(
@@ -130,17 +165,75 @@ class _LoginState extends State<Login> {
   Center _connectUsingText(BuildContext context) {
     return Center(
         child: Text(
-     Constants.loginUserother,
+      Constants.loginUserother,
       style: Theme.of(context)
           .textTheme
           .bodyLarge
           ?.copyWith(color: Constants.greyColor),
     ));
   }
+
+  firebaseCreate(
+      {required String email,
+      required String password,
+      required BuildContext context}) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+
+    try {
+      await auth
+          .createUserWithEmailAndPassword(
+              email: _username.text, password: _password.text)
+          .then((value) {
+        log("kayıt  başarılı");
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text("Kayıt Başasrılı  LÜtfen Giriş Yapınız."),
+              actions: <Widget>[
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Constants.mainColor,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10))),
+                  child: const Text(Constants.loginUserokey),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            );
+          },
+        );
+      });
+    } catch (e) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text(Constants.loginAlert),
+            content: const Text("Bu kullanıcı kayıtlıdır"),
+            actions: <Widget>[
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Constants.mainColor,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10))),
+                child: const Text(Constants.loginUserokey),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
 }
 
-class LoginButton extends ConsumerWidget {
-  LoginButton({
+class LoginButton extends StatelessWidget {
+  const LoginButton({
     Key? key,
     required GlobalKey<FormState> formkey,
     required TextEditingController username,
@@ -155,11 +248,7 @@ class LoginButton extends ConsumerWidget {
   final TextEditingController _password;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    var data;
-    final users = ref.read(userProvider).value;
-    //data = users?.map((e) => UserModel.fromJson(e as Map<String, dynamic?>));
-
+  Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width / 2,
       child: ElevatedButton(
@@ -172,39 +261,57 @@ class LoginButton extends ConsumerWidget {
           Constants.loginUser,
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        onPressed: () {
+        onPressed: () async {
           if (_formkey.currentState!.validate() == true) {
             _formkey.currentState?.save();
 
-            if (_username.text == "Makgul" && _password.text == "20235") {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: ((context) => const DenemeHome())));
-            } else {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                    title: const Text(Constants.loginAlert),
-                    content: const Text(Constants.loginUserincorrect),
-                    actions: <Widget>[
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Constants.mainColor,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10))),
-                        child: const Text(Constants.loginUserokey),
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                      ),
-                    ],
-                  );
-                },
-              );
-            }
+            firebaseLogin(
+                email: _username.text,
+                password: _password.text,
+                context: context);
           }
         },
       ),
     );
+  }
+
+  firebaseLogin(
+      {required String email,
+      required String password,
+      required BuildContext context}) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+
+    try {
+      await auth
+          .signInWithEmailAndPassword(
+              email: _username.text, password: _password.text)
+          .then((value) {
+        log("Giriş başarılı");
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: ((context) => const Home())));
+      });
+    } catch (e) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text(Constants.loginAlert),
+            content: const Text(Constants.loginUserincorrect),
+            actions: <Widget>[
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Constants.mainColor,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10))),
+                child: const Text(Constants.loginUserokey),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
   }
 }
