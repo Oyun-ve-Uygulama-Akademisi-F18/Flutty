@@ -214,7 +214,11 @@ class HomePageDutiesCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List title = ["Proje Yönetimi\nHaftalık Görevler", "Muhammed", "Akgül"];
+    List title = [
+      "Proje Yönetimi\nHaftalık Görevler",
+      "Flutter\nHaftalık Görevler",
+      "Unity\nHaftalık Görevler"
+    ];
     List progress = ["70%", "50%", "20%"];
     List percent = [0.7, 0.5, 0.2];
     List completed = [
