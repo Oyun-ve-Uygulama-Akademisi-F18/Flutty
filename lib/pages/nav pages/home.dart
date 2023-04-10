@@ -24,22 +24,24 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Constants.whiteColor,
       appBar: _appbarDesign(),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _rowTexts(),
-                Constants.sizedBoxHeight20,
-                const HomePageDutiesCard()
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _rowTexts(),
+                  Constants.sizedBoxHeight20,
+                  const HomePageDutiesCard()
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 30),
-          const MotivationRoom(),
-        ],
+            const SizedBox(height: 30),
+            const MotivationRoom(),
+          ],
+        ),
       ),
     );
   }
@@ -56,7 +58,7 @@ class _HomeState extends State<Home> {
               style: const TextStyle(fontSize: 15, color: Constants.greyColor),
             ),
             const Text(
-              "İyi Günler Muhammed",
+              "İyi Günler Bursiyer",
               style: TextStyle(fontSize: 22, color: Constants.blackColor),
             )
           ],
@@ -162,7 +164,7 @@ class MotivationRoom extends ConsumerWidget {
         },
         child: Container(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height / 2.8,
+          height: MediaQuery.of(context).size.height / 2.5,
           decoration: const BoxDecoration(
             color: Constants.mainColor,
             borderRadius: BorderRadius.only(
@@ -180,7 +182,7 @@ class MotivationRoom extends ConsumerWidget {
                 const Text(
                   'MO\nTİVAS\nYON',
                   style: TextStyle(
-                      fontSize: 60,
+                      fontSize: 50,
                       color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),
@@ -191,7 +193,7 @@ class MotivationRoom extends ConsumerWidget {
                   'Odasına Katılmak için hemen tıkla.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 15,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
@@ -245,7 +247,7 @@ class HomePageDutiesCard extends StatelessWidget {
                   child: Text(
                     title[index],
                     style: const TextStyle(
-                        fontSize: 23,
+                        fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: Constants.whiteColor),
                   ),
@@ -256,14 +258,14 @@ class HomePageDutiesCard extends StatelessWidget {
                   child: Text(
                     completed[index],
                     style: const TextStyle(
-                        fontSize: 18,
+                        fontSize: 13,
                         fontWeight: FontWeight.bold,
                         color: Constants.whiteColor),
                   ),
                 ),
                 Positioned(
                   right: 10,
-                  top: 20,
+                  top: 32,
                   child: CircularPercentIndicator(
                     animation: true,
                     animationDuration: 1500,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutty/constants/constants.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import '../../utils.dart';
@@ -86,7 +87,8 @@ class DutiesState extends State<Duties> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TableCalendar - Events'),
+        backgroundColor: Constants.mainColor,
+        title: const Text('Görev Takip Takvimi'),
       ),
       body: Column(
         children: [

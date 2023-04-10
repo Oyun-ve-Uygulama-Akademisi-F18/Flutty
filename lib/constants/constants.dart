@@ -28,7 +28,7 @@ class Constants {
   static const String splashScreen1SubTitle2 =
       'Flutty ile hem motivasyonumuzu toplayıp hemde ooo kocaaaaa \nTopluluğumuzdaki Görevlerimizi, Sorumluluklarımızı, ve sizler için Akademinin öngördüğü verimli vakit geçirebileceğiniz planlamalar sizleri bekliyor. ';
   static const String splashScreen1SubTitle3 =
-      'Kullanıcı Adı : OUA2023\nŞifre: 2023';
+      'Email ve Şifreni Girip Aramıza Katıl \n Eğer Kayıtlı Değilsen E mail ve Şifre Yazıp Kayıt ol Butonuna Tıklamayı Unutma...';
 
   /*-------------ActivityText------------*/
   static const String activityTextappbar = 'Aktiviteler';
@@ -53,13 +53,13 @@ class Constants {
   static const double marginActivitymid = 10.0;
   /*-------Activity Font Size-------*/
   static const double activityfontSizetittle = 25;
-  static const double activityfontSize = 20;
+  static const double activityfontSize = 12;
 /*------------Login Text--------*/
   static const String loginWelcome = 'Hoşgeldin';
   static const String loginlogin =
       'Oyun ve Uygulama Akademisinin Motivasyon \n Uygulamasında Seni Görmekten Mutluluk Duyuyoruz \n Hadi Hemen Giriş Yap ';
-  static const String loginErroxtext = "Lütfen Geçerli Bir Kullanıcı Adı Girin";
-  static const String loginUsertext = "Kullanıcı Adı";
+  static const String loginErroxtext = "Lütfen Geçerli Bir Email Adresi Girin";
+  static const String loginUsertext = "Email Adresi";
   static const String loginPasswordtext = 'Şifre';
   static const String loginUsercharackter =
       'Şifreniz En Fazla 10 Karekterden Olmalıdır';
@@ -70,11 +70,11 @@ class Constants {
   static const String loginUserother = 'Veya kullanarak bağlanın';
   static const String loginUser = 'Giriş Yap';
   static const String loginAlert = "Uyarı";
-  static const String loginUserincorrect = "Kullanıcı Adı veya Şifre Hatalıdır";
+  static const String loginUserincorrect = "Email Adresi veya Şifre Hatalıdır";
   static const String loginUserokey = "Tamam";
 /*-------------Profile Text-------*/
-  static const String profileAppbartext = 'Profile Page';
-  static const String profileStartext = 'Star Tab';
+  static const String profileAppbartext = 'Bursiyer Profili';
+  static const String profileStartext = 'Yıldız Bursiyerler';
 /*-----Profile FontWeight-FontSize ------*/
   static const profileFontweight = FontWeight.bold;
   static const double profilefontSize = 18.0;

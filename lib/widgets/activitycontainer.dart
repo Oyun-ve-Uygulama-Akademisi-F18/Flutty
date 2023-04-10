@@ -22,7 +22,7 @@ class ActivityContainer extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: const [
             BoxShadow(
-              color: Constants.greyColor,
+              color: Constants.mainColor,
               blurRadius: 4,
               offset: Offset(4, 8), // Shadow position
             ),
@@ -46,9 +46,9 @@ class ActivityContainer extends StatelessWidget {
                   Text(
                     text,
                     style: const TextStyle(
-                        color: Constants.darkColor,
-                        fontSize: Constants.activityfontSize,
-                        fontWeight: FontWeight.bold),
+                      color: Constants.darkColor,
+                      fontSize: Constants.activityfontSize,
+                    ),
                   ),
                   Expanded(child: Container()),
                   Text(

@@ -107,7 +107,7 @@ class _LoginState extends State<Login> {
                                     return AlertDialog(
                                       title: const Text(Constants.loginAlert),
                                       content: const Text(
-                                          "Lüütfen Email ve Password Giriniz"),
+                                          "Lütfen Email ve Şifre Giriniz"),
                                       actions: <Widget>[
                                         ElevatedButton(
                                           style: ElevatedButton.styleFrom(
@@ -184,12 +184,12 @@ class _LoginState extends State<Login> {
           .createUserWithEmailAndPassword(
               email: _username.text, password: _password.text)
           .then((value) {
-        log("kayıt  başarılı");
+        log("Kayıt  başarılı");
         showDialog(
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: const Text("Kayıt Başasrılı  LÜtfen Giriş Yapınız."),
+              title: const Text("Kayıt Başarılı  Lütfen Giriş Yapınız."),
               actions: <Widget>[
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -212,7 +212,7 @@ class _LoginState extends State<Login> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: const Text(Constants.loginAlert),
-            content: const Text("Bu kullanıcı kayıtlıdır"),
+            content: const Text("Bu Kullanıcı kayıtlı"),
             actions: <Widget>[
               ElevatedButton(
                 style: ElevatedButton.styleFrom(

@@ -23,6 +23,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Constants.mainColor,
         title: const Text(Constants.profileAppbartext),
         bottom: TabBar(
           controller: _tabController,
@@ -48,7 +49,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
           Constants.sizedBoxHeight20,
           const Center(
             child: Text(
-              'John Doe',
+              '😍OUA 2023😍',
               style: TextStyle(
                 fontSize: Constants.profilefontSizemax,
                 fontWeight: FontWeight.bold,
@@ -58,7 +59,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
           Constants.sizedBoxHeight10,
           const Center(
             child: Text(
-              'Flutter Developer',
+              'Flutter Geliştiricisi',
               style: TextStyle(
                 fontSize: Constants.profilefontSize,
                 color: Constants.grey,
@@ -74,7 +75,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                 Column(
                   children: const [
                     Text(
-                      'Badges',
+                      'Başarımlar',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -92,7 +93,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                 Column(
                   children: const [
                     Text(
-                      'Friends',
+                      'Arkadaşlar',
                       style: TextStyle(
                         fontWeight: Constants.profileFontweight,
                       ),
@@ -110,7 +111,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                 Column(
                   children: const [
                     Text(
-                      'Scores',
+                      'Puan',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),

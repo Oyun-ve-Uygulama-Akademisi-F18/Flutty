@@ -52,11 +52,12 @@ class _NavBarState extends State<NavBar> {
                 currentIndex: currentIndex,
                 items: const [
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.home_filled), label: 'Home'),
+                      icon: Icon(Icons.home_filled), label: 'Anasayfa'),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.chat), label: 'Chat'),
+                      icon: Icon(Icons.calendar_month_outlined),
+                      label: 'Takvim'),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.list_alt_rounded), label: 'Appointment'),
+                      icon: Icon(Icons.list_alt_rounded), label: 'Aktiviteler'),
                   BottomNavigationBarItem(
                       icon: Icon(Icons.account_circle_rounded),
                       label: 'Profil'),
